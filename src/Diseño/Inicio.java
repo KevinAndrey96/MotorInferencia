@@ -81,6 +81,10 @@ public class Inicio extends javax.swing.JFrame {
         btn_AgregarHipo = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         btn_Actualizar = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        jpCondiciones1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         CentralInferirAtras = new javax.swing.JPanel();
         PanelInfAtras = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -350,16 +354,11 @@ public class Inicio extends javax.swing.JFrame {
         PanelPrincipal.add(SuperiorInferirAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 830, -1));
 
         CentralReglasCondiciones.setBackground(new java.awt.Color(255, 255, 255));
-        CentralReglasCondiciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpCondiciones.setBackground(new java.awt.Color(255, 255, 255));
         jpCondiciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONDICIONES", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ebrima", 1, 12))); // NOI18N
 
-        LstCondiciones.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        LstCondiciones.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
         jScrollPane6.setViewportView(LstCondiciones);
 
         javax.swing.GroupLayout jpCondicionesLayout = new javax.swing.GroupLayout(jpCondiciones);
@@ -368,24 +367,18 @@ public class Inicio extends javax.swing.JFrame {
             jpCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpCondicionesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpCondicionesLayout.setVerticalGroup(
             jpCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
         );
 
-        CentralReglasCondiciones.add(jpCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 84, -1, -1));
-
         jpHipotesis.setBackground(new java.awt.Color(255, 255, 255));
         jpHipotesis.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "HIPOTESIS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ebrima", 1, 12))); // NOI18N
 
-        LstHipotesis.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        LstHipotesis.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
         jScrollPane5.setViewportView(LstHipotesis);
 
         javax.swing.GroupLayout jpHipotesisLayout = new javax.swing.GroupLayout(jpHipotesis);
@@ -394,15 +387,13 @@ public class Inicio extends javax.swing.JFrame {
             jpHipotesisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpHipotesisLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jpHipotesisLayout.setVerticalGroup(
             jpHipotesisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
         );
-
-        CentralReglasCondiciones.add(jpHipotesis, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 84, -1, -1));
 
         btn_EliminarHipo.setBackground(new java.awt.Color(255, 255, 255));
         btn_EliminarHipo.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
@@ -413,7 +404,6 @@ public class Inicio extends javax.swing.JFrame {
                 btn_EliminarHipoActionPerformed(evt);
             }
         });
-        CentralReglasCondiciones.add(btn_EliminarHipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, 29));
 
         btn_AgregarCond.setBackground(new java.awt.Color(255, 255, 255));
         btn_AgregarCond.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
@@ -424,7 +414,6 @@ public class Inicio extends javax.swing.JFrame {
                 btn_AgregarCondActionPerformed(evt);
             }
         });
-        CentralReglasCondiciones.add(btn_AgregarCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 355, 155, 29));
 
         btn_EliminarCond.setBackground(new java.awt.Color(255, 255, 255));
         btn_EliminarCond.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
@@ -435,7 +424,6 @@ public class Inicio extends javax.swing.JFrame {
                 btn_EliminarCondActionPerformed(evt);
             }
         });
-        CentralReglasCondiciones.add(btn_EliminarCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 390, -1, 29));
 
         btn_AgregarHipo.setBackground(new java.awt.Color(255, 255, 255));
         btn_AgregarHipo.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
@@ -446,11 +434,9 @@ public class Inicio extends javax.swing.JFrame {
                 btn_AgregarHipoActionPerformed(evt);
             }
         });
-        CentralReglasCondiciones.add(btn_AgregarHipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 355, 153, 29));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        CentralReglasCondiciones.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 84, 13, 361));
 
         btn_Actualizar.setBackground(new java.awt.Color(255, 255, 255));
         btn_Actualizar.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
@@ -461,7 +447,103 @@ public class Inicio extends javax.swing.JFrame {
                 btn_ActualizarActionPerformed(evt);
             }
         });
-        CentralReglasCondiciones.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 37, -1, 29));
+
+        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jpCondiciones1.setBackground(new java.awt.Color(255, 255, 255));
+        jpCondiciones1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ebrima", 1, 12))); // NOI18N
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
+        jTextArea2.setRows(4);
+        jTextArea2.setTabSize(3);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        javax.swing.GroupLayout jpCondiciones1Layout = new javax.swing.GroupLayout(jpCondiciones1);
+        jpCondiciones1.setLayout(jpCondiciones1Layout);
+        jpCondiciones1Layout.setHorizontalGroup(
+            jpCondiciones1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpCondiciones1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jpCondiciones1Layout.setVerticalGroup(
+            jpCondiciones1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpCondiciones1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout CentralReglasCondicionesLayout = new javax.swing.GroupLayout(CentralReglasCondiciones);
+        CentralReglasCondiciones.setLayout(CentralReglasCondicionesLayout);
+        CentralReglasCondicionesLayout.setHorizontalGroup(
+            CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                        .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jpHipotesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_AgregarHipo, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_EliminarHipo))))
+                        .addGap(28, 28, 28)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                                .addComponent(jpCondiciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27))
+                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btn_EliminarCond)
+                                    .addComponent(btn_AgregarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jpCondiciones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(25, Short.MAX_VALUE))
+                    .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                        .addComponent(btn_Actualizar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        CentralReglasCondicionesLayout.setVerticalGroup(
+            CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(btn_Actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                                .addComponent(jpHipotesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_AgregarHipo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(11, 11, 11)
+                                .addComponent(btn_EliminarHipo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                                .addComponent(jpCondiciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_AgregarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13)
+                                .addComponent(btn_EliminarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jpCondiciones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(22, 22, 22))
+        );
+
+        jpCondiciones1.getAccessibleContext().setAccessibleName("");
 
         PanelPrincipal.add(CentralReglasCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 810, 530));
 
@@ -799,11 +881,14 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel jlbInfAdelante;
     private javax.swing.JLabel jlbInfAtras;
     private javax.swing.JLabel jlbInfAtras1;
@@ -811,6 +896,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jlbReglas1;
     private javax.swing.JLabel jlbReglas2;
     private javax.swing.JPanel jpCondiciones;
+    private javax.swing.JPanel jpCondiciones1;
     private javax.swing.JPanel jpHipotesis;
     private javax.swing.JLabel minMI;
     private javax.swing.JTextArea txtInferirAdelante;
