@@ -348,6 +348,7 @@ public class Inicio extends javax.swing.JFrame {
         PanelPrincipal.add(SuperiorInferirAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 830, -1));
 
         CentralReglasCondiciones.setBackground(new java.awt.Color(255, 255, 255));
+        CentralReglasCondiciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpCondiciones.setBackground(new java.awt.Color(255, 255, 255));
         jpCondiciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONDICIONES", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ebrima", 1, 12))); // NOI18N
@@ -373,6 +374,8 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
         );
 
+        CentralReglasCondiciones.add(jpCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 84, -1, -1));
+
         jpHipotesis.setBackground(new java.awt.Color(255, 255, 255));
         jpHipotesis.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "HIPOTESIS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ebrima", 1, 12))); // NOI18N
 
@@ -397,6 +400,8 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
         );
 
+        CentralReglasCondiciones.add(jpHipotesis, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 84, -1, -1));
+
         btn_EliminarHipo.setBackground(new java.awt.Color(255, 255, 255));
         btn_EliminarHipo.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
         btn_EliminarHipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Delete.png"))); // NOI18N
@@ -406,6 +411,7 @@ public class Inicio extends javax.swing.JFrame {
                 btn_EliminarHipoActionPerformed(evt);
             }
         });
+        CentralReglasCondiciones.add(btn_EliminarHipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, 29));
 
         btn_AgregarCond.setBackground(new java.awt.Color(255, 255, 255));
         btn_AgregarCond.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
@@ -416,6 +422,7 @@ public class Inicio extends javax.swing.JFrame {
                 btn_AgregarCondActionPerformed(evt);
             }
         });
+        CentralReglasCondiciones.add(btn_AgregarCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 355, 155, 29));
 
         btn_EliminarCond.setBackground(new java.awt.Color(255, 255, 255));
         btn_EliminarCond.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
@@ -426,6 +433,7 @@ public class Inicio extends javax.swing.JFrame {
                 btn_EliminarCondActionPerformed(evt);
             }
         });
+        CentralReglasCondiciones.add(btn_EliminarCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 390, -1, 29));
 
         btn_AgregarHipo.setBackground(new java.awt.Color(255, 255, 255));
         btn_AgregarHipo.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
@@ -436,9 +444,11 @@ public class Inicio extends javax.swing.JFrame {
                 btn_AgregarHipoActionPerformed(evt);
             }
         });
+        CentralReglasCondiciones.add(btn_AgregarHipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 355, 153, 29));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        CentralReglasCondiciones.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 84, 13, 361));
 
         btn_Actualizar.setBackground(new java.awt.Color(255, 255, 255));
         btn_Actualizar.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
@@ -449,60 +459,7 @@ public class Inicio extends javax.swing.JFrame {
                 btn_ActualizarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout CentralReglasCondicionesLayout = new javax.swing.GroupLayout(CentralReglasCondiciones);
-        CentralReglasCondiciones.setLayout(CentralReglasCondicionesLayout);
-        CentralReglasCondicionesLayout.setHorizontalGroup(
-            CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_Actualizar)
-                    .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                        .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jpHipotesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btn_EliminarHipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn_AgregarHipo, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(37, 37, 37)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jpCondiciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                                .addGap(92, 92, 92)
-                                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btn_EliminarCond, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn_AgregarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(134, Short.MAX_VALUE))
-        );
-        CentralReglasCondicionesLayout.setVerticalGroup(
-            CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(btn_Actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                        .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jpHipotesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jpCondiciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                                .addComponent(btn_AgregarHipo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_EliminarHipo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                                .addComponent(btn_AgregarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_EliminarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(85, Short.MAX_VALUE))
-        );
+        CentralReglasCondiciones.add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 37, -1, 29));
 
         PanelPrincipal.add(CentralReglasCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 810, 530));
 
