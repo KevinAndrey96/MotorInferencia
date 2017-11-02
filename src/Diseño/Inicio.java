@@ -27,8 +27,8 @@ public class Inicio extends javax.swing.JFrame {
         setColor(btn_Reglas);
         SuperiorReglasCondiciones.setVisible(true);
         CentralReglasCondiciones.setVisible(true);
-        txtHipotesis.setEditable(false);
-        txtCondiciones.setEditable(false);
+        //txtHipotesis.setEditable(false);
+        //txtCondiciones.setEditable(false);
         txtInferirAtras.setEditable(false);
         txtInferirAdelante.setEditable(false);
     }
@@ -68,11 +68,11 @@ public class Inicio extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         CentralReglasCondiciones = new javax.swing.JPanel();
         jpCondiciones = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtCondiciones = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        LstCondiciones = new javax.swing.JList<>();
         jpHipotesis = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtHipotesis = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        LstHipotesis = new javax.swing.JList<>();
         btn_EliminarHipo = new javax.swing.JButton();
         btn_AgregarCond = new javax.swing.JButton();
         btn_EliminarCond = new javax.swing.JButton();
@@ -352,11 +352,12 @@ public class Inicio extends javax.swing.JFrame {
         jpCondiciones.setBackground(new java.awt.Color(255, 255, 255));
         jpCondiciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONDICIONES", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ebrima", 1, 12))); // NOI18N
 
-        txtCondiciones.setColumns(20);
-        txtCondiciones.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        txtCondiciones.setRows(5);
-        txtCondiciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jScrollPane1.setViewportView(txtCondiciones);
+        LstCondiciones.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane6.setViewportView(LstCondiciones);
 
         javax.swing.GroupLayout jpCondicionesLayout = new javax.swing.GroupLayout(jpCondiciones);
         jpCondiciones.setLayout(jpCondicionesLayout);
@@ -364,25 +365,23 @@ public class Inicio extends javax.swing.JFrame {
             jpCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpCondicionesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jpCondicionesLayout.setVerticalGroup(
             jpCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpCondicionesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
         );
 
         jpHipotesis.setBackground(new java.awt.Color(255, 255, 255));
         jpHipotesis.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "HIPOTESIS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ebrima", 1, 12))); // NOI18N
 
-        txtHipotesis.setColumns(20);
-        txtHipotesis.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
-        txtHipotesis.setRows(5);
-        txtHipotesis.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jScrollPane2.setViewportView(txtHipotesis);
+        LstHipotesis.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane5.setViewportView(LstHipotesis);
 
         javax.swing.GroupLayout jpHipotesisLayout = new javax.swing.GroupLayout(jpHipotesis);
         jpHipotesis.setLayout(jpHipotesisLayout);
@@ -390,15 +389,12 @@ public class Inicio extends javax.swing.JFrame {
             jpHipotesisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpHipotesisLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jpHipotesisLayout.setVerticalGroup(
             jpHipotesisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpHipotesisLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
         );
 
         btn_EliminarHipo.setBackground(new java.awt.Color(255, 255, 255));
@@ -805,6 +801,8 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel CentralInferirAtras;
     private javax.swing.JPanel CentralReglasCondiciones;
     private javax.swing.JLabel CerrarMI;
+    private javax.swing.JList<String> LstCondiciones;
+    private javax.swing.JList<String> LstHipotesis;
     private javax.swing.JPanel Menu;
     private javax.swing.JLabel Mov;
     private javax.swing.JPanel PanelInfAd;
@@ -830,10 +828,10 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jlbInfAdelante;
     private javax.swing.JLabel jlbInfAtras;
@@ -844,8 +842,6 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel jpCondiciones;
     private javax.swing.JPanel jpHipotesis;
     private javax.swing.JLabel minMI;
-    private javax.swing.JTextArea txtCondiciones;
-    private javax.swing.JTextArea txtHipotesis;
     private javax.swing.JTextArea txtInferirAdelante;
     private javax.swing.JTextArea txtInferirAtras;
     // End of variables declaration//GEN-END:variables
