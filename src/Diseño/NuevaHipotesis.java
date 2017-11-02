@@ -5,6 +5,8 @@
  */
 package Diseño;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author MARYSOL
@@ -22,7 +24,8 @@ public class NuevaHipotesis extends javax.swing.JFrame {
     String atr;
     String val;
     String des;    
-
+    
+    public String Hipotesis[]=new String[3];//Aqui se guardaran las hipotesis
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -178,6 +181,13 @@ public class NuevaHipotesis extends javax.swing.JFrame {
         atr = this.txt_atr.getText();
         val = this.txt_val.getText();
         des = this.txt_des.getText();
+        
+        Hipotesis[0]=atr;
+        Hipotesis[1]=val;
+        Hipotesis[2]=des;
+        
+        JOptionPane.showMessageDialog(this, "Hipotesis Agregada");
+        
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     /**

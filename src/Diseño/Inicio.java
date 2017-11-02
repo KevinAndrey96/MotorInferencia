@@ -6,8 +6,10 @@
 package Diseño;
 
 import java.awt.*;
+import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -695,9 +697,21 @@ public class Inicio extends javax.swing.JFrame {
        NuevaHipotesis abrir = new NuevaHipotesis();
        abrir.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btn_AgregarHipoActionPerformed
-
+    private DefaultListModel ModeloH()
+    {
+        DefaultListModel<String> model = new DefaultListModel<>();
+        model.addElement( "Hola" );
+        return model;
+    }        
+    private DefaultListModel ModeloC()
+    {
+        DefaultListModel<String> model = new DefaultListModel<>();
+        model.addElement( "Mundo" );
+        return model;
+    }        
     private void btn_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActualizarActionPerformed
-        // TODO add your handling code here:
+        LstHipotesis.setModel(ModeloH());
+        LstCondiciones.setModel(ModeloC());
     }//GEN-LAST:event_btn_ActualizarActionPerformed
 
     private void btn_InferirAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InferirAtrasActionPerformed
