@@ -46,6 +46,10 @@ public class Inicio extends javax.swing.JFrame {
 
         PanelPrincipal = new javax.swing.JPanel();
         Menu = new javax.swing.JPanel();
+        jlbReglas2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         btn_Reglas = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jlbReglas = new javax.swing.JLabel();
@@ -55,10 +59,7 @@ public class Inicio extends javax.swing.JFrame {
         btn_InferirAt = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jlbInfAtras = new javax.swing.JLabel();
-        jlbReglas1 = new javax.swing.JLabel();
-        jlbInfAtras1 = new javax.swing.JLabel();
-        jlbReglas2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         Mov = new javax.swing.JLabel();
         minMI = new javax.swing.JLabel();
         CerrarMI = new javax.swing.JLabel();
@@ -107,7 +108,24 @@ public class Inicio extends javax.swing.JFrame {
         Menu.setToolTipText("");
         Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_Reglas.setBackground(new java.awt.Color(14, 42, 97));
+        jlbReglas2.setFont(new java.awt.Font("Lucida Calligraphy", 3, 12)); // NOI18N
+        jlbReglas2.setForeground(new java.awt.Color(235, 235, 235));
+        jlbReglas2.setText("MOTOR DE INFERENCIA");
+        Menu.add(jlbReglas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 210, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/200px-Escudo_UD.svg.png"))); // NOI18N
+        Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 60, 50));
+
+        jLabel9.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
+        jLabel9.setText("Universidad Distrital ");
+        Menu.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 580, -1, 20));
+
+        jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 0, 14)); // NOI18N
+        jLabel10.setText("Francisco José de Caldas");
+        Menu.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 600, -1, 20));
+
+        btn_Reglas.setBackground(new java.awt.Color(0, 153, 204));
+        btn_Reglas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_Reglas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Reglas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -131,7 +149,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jlbReglas)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         btn_ReglasLayout.setVerticalGroup(
             btn_ReglasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,9 +160,10 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Menu.add(btn_Reglas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 240, -1));
+        Menu.add(btn_Reglas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 240, 50));
 
-        btn_InferirAd.setBackground(new java.awt.Color(14, 42, 97));
+        btn_InferirAd.setBackground(new java.awt.Color(0, 153, 204));
+        btn_InferirAd.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_InferirAd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_InferirAd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -173,7 +192,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jlbInfAdelante)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         btn_InferirAdLayout.setVerticalGroup(
             btn_InferirAdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,9 +203,10 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Menu.add(btn_InferirAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 240, -1));
+        Menu.add(btn_InferirAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 240, 50));
 
-        btn_InferirAt.setBackground(new java.awt.Color(14, 42, 97));
+        btn_InferirAt.setBackground(new java.awt.Color(0, 153, 204));
+        btn_InferirAt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_InferirAt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_InferirAt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -215,7 +235,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jlbInfAtras)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         btn_InferirAtLayout.setVerticalGroup(
             btn_InferirAtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,26 +246,10 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Menu.add(btn_InferirAt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 240, -1));
+        Menu.add(btn_InferirAt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 240, 50));
 
-        jlbReglas1.setBackground(new java.awt.Color(0, 0, 0));
-        jlbReglas1.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
-        jlbReglas1.setForeground(new java.awt.Color(235, 235, 235));
-        jlbReglas1.setText("Universidad Distrital Francisco");
-        Menu.add(jlbReglas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 600, -1, -1));
-
-        jlbInfAtras1.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
-        jlbInfAtras1.setForeground(new java.awt.Color(235, 235, 235));
-        jlbInfAtras1.setText("Jose de Caldas");
-        Menu.add(jlbInfAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 620, -1, -1));
-
-        jlbReglas2.setFont(new java.awt.Font("Ebrima", 3, 16)); // NOI18N
-        jlbReglas2.setForeground(new java.awt.Color(235, 235, 235));
-        jlbReglas2.setText("MOTOR DE INFERENCIA");
-        Menu.add(jlbReglas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/200px-Escudo_UD.svg.png"))); // NOI18N
-        Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 60, 50));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Captura2.PNG"))); // NOI18N
+        Menu.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, 650));
 
         PanelPrincipal.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 780));
 
@@ -543,8 +547,6 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        jpCondiciones1.getAccessibleContext().setAccessibleName("");
-
         PanelPrincipal.add(CentralReglasCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 810, 530));
 
         CentralInferirAtras.setBackground(new java.awt.Color(255, 255, 255));
@@ -688,13 +690,6 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_ReglasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ReglasMousePressed
-        limpiarPaneles();
-        EnviarFocuGris(btn_Reglas);
-        SuperiorReglasCondiciones.setVisible(true);
-        CentralReglasCondiciones.setVisible(true);
-    }//GEN-LAST:event_btn_ReglasMousePressed
    
     private void limpiarPaneles(){
         SuperiorReglasCondiciones.setVisible(false);
@@ -721,25 +716,11 @@ public class Inicio extends javax.swing.JFrame {
         panel.setBackground(new Color(25,77,179));
     }
     
-    private void btn_InferirAdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InferirAdMousePressed
-        limpiarPaneles();
-        EnviarFocuGris(btn_InferirAd);
-        SuperiorInferirAdelante.setVisible(true);
-        CentralInferirAdelante.setVisible(true);        
-    }//GEN-LAST:event_btn_InferirAdMousePressed
-
         int xy;
         int xx;
         int x;
         int y;
         
-    private void btn_InferirAtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InferirAtMousePressed
-        limpiarPaneles();
-        EnviarFocuGris(btn_InferirAt);
-        SuperiorInferirAtras.setVisible(true);
-        CentralInferirAtras.setVisible(true);       
-    }//GEN-LAST:event_btn_InferirAtMousePressed
-
     private void MovMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MovMouseDragged
         this.setLocation(this.getLocation().x + evt.getX() - x, this.getLocation().y + evt.getY() - y);
     }//GEN-LAST:event_MovMouseDragged
@@ -804,15 +785,36 @@ public class Inicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_InferirAdelanteActionPerformed
 
+    private void btn_ReglasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ReglasMousePressed
+        limpiarPaneles();
+        EnviarFocuGris(btn_Reglas);
+        SuperiorReglasCondiciones.setVisible(true);
+        CentralReglasCondiciones.setVisible(true);
+    }//GEN-LAST:event_btn_ReglasMousePressed
+
     private void jlbInfAdelanteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbInfAdelanteMouseClicked
-       /*Adelante abrir = new Adelante();
-       abrir.setVisible(true);*/
+        /*Adelante abrir = new Adelante();
+        abrir.setVisible(true);*/
     }//GEN-LAST:event_jlbInfAdelanteMouseClicked
 
+    private void btn_InferirAdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InferirAdMousePressed
+        limpiarPaneles();
+        EnviarFocuGris(btn_InferirAd);
+        SuperiorInferirAdelante.setVisible(true);
+        CentralInferirAdelante.setVisible(true);
+    }//GEN-LAST:event_btn_InferirAdMousePressed
+
     private void jlbInfAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbInfAtrasMouseClicked
-       /* Atras abrir = new Atras();
-       abrir.setVisible(true);*/
+        /* Atras abrir = new Atras();
+        abrir.setVisible(true);*/
     }//GEN-LAST:event_jlbInfAtrasMouseClicked
+
+    private void btn_InferirAtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InferirAtMousePressed
+        limpiarPaneles();
+        EnviarFocuGris(btn_InferirAt);
+        SuperiorInferirAtras.setVisible(true);
+        CentralInferirAtras.setVisible(true);
+    }//GEN-LAST:event_btn_InferirAtMousePressed
 
     /**
      * @param args the command line arguments
@@ -875,12 +877,15 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton btn_InferirAtras;
     private javax.swing.JPanel btn_Reglas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -891,9 +896,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel jlbInfAdelante;
     private javax.swing.JLabel jlbInfAtras;
-    private javax.swing.JLabel jlbInfAtras1;
     private javax.swing.JLabel jlbReglas;
-    private javax.swing.JLabel jlbReglas1;
     private javax.swing.JLabel jlbReglas2;
     private javax.swing.JPanel jpCondiciones;
     private javax.swing.JPanel jpCondiciones1;
