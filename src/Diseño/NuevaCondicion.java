@@ -96,7 +96,7 @@ public class NuevaCondicion extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jList2);
 
-        btn_agregar.setText("AGRAGAR CONDICION");
+        btn_agregar.setText("AGREGAR CONDICION");
         btn_agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_agregarActionPerformed(evt);
