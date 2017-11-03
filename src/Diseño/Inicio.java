@@ -733,7 +733,7 @@ private void InferirHaciaAdelante(ArrayList AR)
         
         atr_cond = this.txt_atr1.getText();
         val_cond = this.txt_val1.getText();
-        des_cond = this.txt_desc1.getText();  
+        des_cond = this.txt_desc.getText();  
         ope_cond = JListOM.getSelectedValue();
         
         String elem = (atr+" "+ope_cond+" "+val);
