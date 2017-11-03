@@ -72,7 +72,7 @@ public class NuevaHipotesis extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 11)); // NOI18N
-        jLabel2.setText("Atributo");
+        jLabel2.setText("Atributo:");
 
         txt_atr.setFont(new java.awt.Font("Noto Sans", 1, 11)); // NOI18N
         txt_atr.addActionListener(new java.awt.event.ActionListener() {
@@ -89,10 +89,10 @@ public class NuevaHipotesis extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Noto Sans", 1, 11)); // NOI18N
-        jLabel3.setText("Valor");
+        jLabel3.setText("Valor:");
 
         jLabel4.setFont(new java.awt.Font("Noto Sans", 1, 11)); // NOI18N
-        jLabel4.setText("Descripcion");
+        jLabel4.setText("Descripción:");
 
         txt_des.setFont(new java.awt.Font("Noto Sans", 1, 11)); // NOI18N
         txt_des.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +138,7 @@ public class NuevaHipotesis extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
         );
 
         Mov.setBackground(new java.awt.Color(255, 255, 255));
@@ -176,11 +176,11 @@ public class NuevaHipotesis extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                        .addGap(58, 58, 58)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txt_val, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,7 +214,7 @@ public class NuevaHipotesis extends javax.swing.JFrame {
                     .addComponent(CerrarMI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txt_atr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
