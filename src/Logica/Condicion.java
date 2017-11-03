@@ -14,15 +14,13 @@ public class Condicion {
     private int Valor= 0;
     private String Descripcion="";
 
-    public Condicion(String Atributo, int Valor, String Descripcion) {
-        this.Atributo=Atributo;
-        this.Valor=Valor;
-        this.Descripcion=Descripcion;
+    public Condicion() {
+        
     }
 
     @Override
     public String toString() {
-        return "Condicion{" + "Atributo=" + Atributo + ", Valor=" + Valor + ", Descripcion=" + Descripcion + '}';
+        return  Atributo + "-" + Valor + "-" + Descripcion;
     }
     
 

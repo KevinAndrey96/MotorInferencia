@@ -14,15 +14,19 @@ public class Hipotesis {
     private int Valor= 0;
     private String Descripcion="";
 
-    public Hipotesis(String Atributo, int Valor, String Descripcion) {
+  /*  public Hipotesis(String Atributo, int Valor, String Descripcion) {
         this.Atributo=Atributo;
         this.Valor=Valor;
         this.Descripcion=Descripcion;
     }
+*/
+    public Hipotesis() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     @Override
     public String toString() {
-        return "Hipotesis{" + "Atributo=" + Atributo + ", Valor=" + Valor + ", Descripcion=" + Descripcion + '}';
+        return  Atributo + "-" + Valor + "-" + Descripcion;
     }
     
 

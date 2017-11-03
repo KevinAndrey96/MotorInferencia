@@ -5,7 +5,10 @@
  */
 package Diseño;
 
+import Logica.Condicion;
+import Logica.Hipotesis;
 import java.awt.*;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -767,10 +770,65 @@ public class Inicio extends javax.swing.JFrame {
         return model;
     }        
     private void btn_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActualizarActionPerformed
-        LstHipotesis.setModel(ModeloH());
-        LstCondiciones.setModel(ModeloC());
+//        LstHipotesis.setModel(ModeloH());
+  //      LstCondiciones.setModel(ModeloC());
+//    JOptionPane.showMessageDialog(Menu, LstHipotesis.getSelectedValue());
+    Hipotesis H=new Hipotesis();
+  H.setAtributo("Sol");
+  H.setValor(1);
+  H.setDescripcion("Mañana hará sol");
+  
+  ArrayList AC= new ArrayList();
+  Condicion C=new Condicion();
+  C.setAtributo("SolHoy");
+  C.setValor(1);
+  C.setDescripcion("Hoy hizo sol");
+  AC.add(C);
+  Condicion C2=new Condicion();
+  C2.setAtributo("SolAyer");
+  C2.setValor(1);
+  C2.setDescripcion("Ayer hizo sol");
+  AC.add(C2);
+  
+  igual(H,AC);
     }//GEN-LAST:event_btn_ActualizarActionPerformed
-
+private void igual(Hipotesis Hipo, ArrayList AR)
+{
+    //JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion());
+    //Comienza a preguntar
+    String rta[]=new String[AR.size()];
+    int FC=0;
+    for(int i=0;i<AR.size();i++)
+    {
+        String VC[]=AR.get(i).toString().split("-");
+        rta[i]=JOptionPane.showInputDialog(VC[2]);
+        if(rta[i].equals(VC[1]))
+        {
+            FC++;
+        }else
+        {
+            FC--;
+        }
+    }
+    int Respuesta=FC/AR.size();
+    if(Respuesta==0)
+    {
+        JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion()+" Equiprobable, Factor de certeza=50%");
+    }else{
+    if(Respuesta>0)
+    JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion()+" Verdadero, Factor de certeza="+Respuesta*100+"%");
+    else
+    JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion()+" Falso, Factor de certeza="+Respuesta*-100+"%");
+    }
+    /*if(rta[0].equals(rta[1]) && rta[0].equals("1"))
+    {
+        JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion()+" Verdadero");
+    }else
+    {
+        JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion()+" Falso");
+    }*/
+}
+        
     private void btn_InferirAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InferirAtrasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_InferirAtrasActionPerformed
