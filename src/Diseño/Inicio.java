@@ -19,9 +19,9 @@ import javax.swing.JPanel;
  */
 public class Inicio extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Inicio
-     */
+    public static int rgl;
+    public static String Lista[] = new String[20];//Vector para mostrar lista de hipotesis
+    
     public Inicio() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -33,6 +33,9 @@ public class Inicio extends javax.swing.JFrame {
         //txtCondiciones.setEditable(false);
         txtInferirAtras.setEditable(false);
         txtInferirAdelante.setEditable(false);
+        rgl = 0;
+       
+        //
     }
 
     /**
@@ -59,15 +62,6 @@ public class Inicio extends javax.swing.JFrame {
         jlbInfAtras1 = new javax.swing.JLabel();
         jlbReglas2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        Mov = new javax.swing.JLabel();
-        minMI = new javax.swing.JLabel();
-        CerrarMI = new javax.swing.JLabel();
-        SuperiorReglasCondiciones = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        SuperiorInferirAdelante = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        SuperiorInferirAtras = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         CentralReglasCondiciones = new javax.swing.JPanel();
         jpCondiciones = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -82,9 +76,17 @@ public class Inicio extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btn_Actualizar = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
-        jpCondiciones1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        Mov = new javax.swing.JLabel();
+        minMI = new javax.swing.JLabel();
+        CerrarMI = new javax.swing.JLabel();
+        SuperiorReglasCondiciones = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        SuperiorInferirAdelante = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        SuperiorInferirAtras = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         CentralInferirAtras = new javax.swing.JPanel();
         PanelInfAtras = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -96,8 +98,9 @@ public class Inicio extends javax.swing.JFrame {
         txtInferirAdelante = new javax.swing.JTextArea();
         btn_InferirAdelante = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         PanelPrincipal.setMinimumSize(new java.awt.Dimension(800, 600));
@@ -232,12 +235,12 @@ public class Inicio extends javax.swing.JFrame {
         jlbReglas1.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         jlbReglas1.setForeground(new java.awt.Color(235, 235, 235));
         jlbReglas1.setText("Universidad Distrital Francisco");
-        Menu.add(jlbReglas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 600, -1, -1));
+        Menu.add(jlbReglas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, -1, -1));
 
         jlbInfAtras1.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         jlbInfAtras1.setForeground(new java.awt.Color(235, 235, 235));
         jlbInfAtras1.setText("Jose de Caldas");
-        Menu.add(jlbInfAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 620, -1, -1));
+        Menu.add(jlbInfAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 570, -1, -1));
 
         jlbReglas2.setFont(new java.awt.Font("Ebrima", 3, 16)); // NOI18N
         jlbReglas2.setForeground(new java.awt.Color(235, 235, 235));
@@ -245,113 +248,9 @@ public class Inicio extends javax.swing.JFrame {
         Menu.add(jlbReglas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/200px-Escudo_UD.svg.png"))); // NOI18N
-        Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 60, 50));
+        Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 60, 50));
 
-        PanelPrincipal.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 780));
-
-        Mov.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        Mov.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                MovMouseDragged(evt);
-            }
-        });
-        Mov.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                MovMousePressed(evt);
-            }
-        });
-        PanelPrincipal.add(Mov, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 0, 790, 30));
-
-        minMI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Minus Math _28px.png"))); // NOI18N
-        minMI.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                minMIMouseClicked(evt);
-            }
-        });
-        PanelPrincipal.add(minMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 0, 30, 30));
-
-        CerrarMI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cerrar.png"))); // NOI18N
-        CerrarMI.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                CerrarMIMousePressed(evt);
-            }
-        });
-        PanelPrincipal.add(CerrarMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 30, 30));
-
-        SuperiorReglasCondiciones.setBackground(new java.awt.Color(72, 71, 71));
-
-        jLabel2.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(235, 235, 235));
-        jLabel2.setText("Reglas Y Condiciones");
-
-        javax.swing.GroupLayout SuperiorReglasCondicionesLayout = new javax.swing.GroupLayout(SuperiorReglasCondiciones);
-        SuperiorReglasCondiciones.setLayout(SuperiorReglasCondicionesLayout);
-        SuperiorReglasCondicionesLayout.setHorizontalGroup(
-            SuperiorReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SuperiorReglasCondicionesLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(497, Short.MAX_VALUE))
-        );
-        SuperiorReglasCondicionesLayout.setVerticalGroup(
-            SuperiorReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SuperiorReglasCondicionesLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-        );
-
-        PanelPrincipal.add(SuperiorReglasCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 830, -1));
-
-        SuperiorInferirAdelante.setBackground(new java.awt.Color(72, 71, 71));
-
-        jLabel3.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(235, 235, 235));
-        jLabel3.setText("Inferencia Hacia Adelante");
-
-        javax.swing.GroupLayout SuperiorInferirAdelanteLayout = new javax.swing.GroupLayout(SuperiorInferirAdelante);
-        SuperiorInferirAdelante.setLayout(SuperiorInferirAdelanteLayout);
-        SuperiorInferirAdelanteLayout.setHorizontalGroup(
-            SuperiorInferirAdelanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SuperiorInferirAdelanteLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(497, Short.MAX_VALUE))
-        );
-        SuperiorInferirAdelanteLayout.setVerticalGroup(
-            SuperiorInferirAdelanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SuperiorInferirAdelanteLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-        );
-
-        PanelPrincipal.add(SuperiorInferirAdelante, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 830, -1));
-
-        SuperiorInferirAtras.setBackground(new java.awt.Color(72, 71, 71));
-
-        jLabel4.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(235, 235, 235));
-        jLabel4.setText("Inferencia Hacia Atras");
-
-        javax.swing.GroupLayout SuperiorInferirAtrasLayout = new javax.swing.GroupLayout(SuperiorInferirAtras);
-        SuperiorInferirAtras.setLayout(SuperiorInferirAtrasLayout);
-        SuperiorInferirAtrasLayout.setHorizontalGroup(
-            SuperiorInferirAtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SuperiorInferirAtrasLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(497, Short.MAX_VALUE))
-        );
-        SuperiorInferirAtrasLayout.setVerticalGroup(
-            SuperiorInferirAtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SuperiorInferirAtrasLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-        );
-
-        PanelPrincipal.add(SuperiorInferirAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 830, -1));
+        PanelPrincipal.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 240, 650));
 
         CentralReglasCondiciones.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -451,78 +350,55 @@ public class Inicio extends javax.swing.JFrame {
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jpCondiciones1.setBackground(new java.awt.Color(255, 255, 255));
-        jpCondiciones1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ebrima", 1, 12))); // NOI18N
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
-        jTextArea2.setRows(4);
-        jTextArea2.setTabSize(3);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        javax.swing.GroupLayout jpCondiciones1Layout = new javax.swing.GroupLayout(jpCondiciones1);
-        jpCondiciones1.setLayout(jpCondiciones1Layout);
-        jpCondiciones1Layout.setHorizontalGroup(
-            jpCondiciones1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpCondiciones1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jpCondiciones1Layout.setVerticalGroup(
-            jpCondiciones1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpCondiciones1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout CentralReglasCondicionesLayout = new javax.swing.GroupLayout(CentralReglasCondiciones);
         CentralReglasCondiciones.setLayout(CentralReglasCondicionesLayout);
         CentralReglasCondicionesLayout.setHorizontalGroup(
             CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
                 .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jpHipotesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CentralReglasCondicionesLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jpHipotesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btn_AgregarHipo, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btn_EliminarHipo))))
-                        .addGap(28, 28, 28)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                                .addComponent(jpCondiciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27))
-                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btn_EliminarCond)
-                                    .addComponent(btn_AgregarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jpCondiciones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(25, Short.MAX_VALUE))
+                            .addComponent(btn_AgregarHipo, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_EliminarHipo))
+                        .addGap(47, 47, 47)))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                        .addComponent(btn_Actualizar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addComponent(jpCondiciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_EliminarCond)
+                            .addComponent(btn_AgregarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(588, 588, 588))
+            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(btn_Actualizar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CentralReglasCondicionesLayout.setVerticalGroup(
             CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CentralReglasCondicionesLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addComponent(btn_Actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
                 .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
+                        .addGap(18, 18, 18)
                         .addGroup(CentralReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
                                 .addComponent(jpHipotesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -534,18 +410,121 @@ public class Inicio extends javax.swing.JFrame {
                                 .addComponent(jpCondiciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btn_AgregarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(13, 13, 13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btn_EliminarCond, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jpCondiciones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(22, 22, 22))
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(CentralReglasCondicionesLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 97, Short.MAX_VALUE))
         );
 
-        jpCondiciones1.getAccessibleContext().setAccessibleName("");
-
         PanelPrincipal.add(CentralReglasCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 810, 530));
+
+        Mov.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Mov.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                MovMouseDragged(evt);
+            }
+        });
+        Mov.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MovMousePressed(evt);
+            }
+        });
+        PanelPrincipal.add(Mov, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 790, 30));
+
+        minMI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Minus Math _28px.png"))); // NOI18N
+        minMI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minMIMouseClicked(evt);
+            }
+        });
+        PanelPrincipal.add(minMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 10, 30, 30));
+
+        CerrarMI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cerrar.png"))); // NOI18N
+        CerrarMI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                CerrarMIMousePressed(evt);
+            }
+        });
+        PanelPrincipal.add(CerrarMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 10, 30, 30));
+
+        SuperiorReglasCondiciones.setBackground(new java.awt.Color(72, 71, 71));
+
+        jLabel2.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(235, 235, 235));
+        jLabel2.setText("Reglas Y Condiciones");
+
+        javax.swing.GroupLayout SuperiorReglasCondicionesLayout = new javax.swing.GroupLayout(SuperiorReglasCondiciones);
+        SuperiorReglasCondiciones.setLayout(SuperiorReglasCondicionesLayout);
+        SuperiorReglasCondicionesLayout.setHorizontalGroup(
+            SuperiorReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SuperiorReglasCondicionesLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(486, Short.MAX_VALUE))
+        );
+        SuperiorReglasCondicionesLayout.setVerticalGroup(
+            SuperiorReglasCondicionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SuperiorReglasCondicionesLayout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+        );
+
+        PanelPrincipal.add(SuperiorReglasCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 830, 100));
+
+        SuperiorInferirAdelante.setBackground(new java.awt.Color(72, 71, 71));
+
+        jLabel3.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(235, 235, 235));
+        jLabel3.setText("Inferencia Hacia Adelante");
+
+        javax.swing.GroupLayout SuperiorInferirAdelanteLayout = new javax.swing.GroupLayout(SuperiorInferirAdelante);
+        SuperiorInferirAdelante.setLayout(SuperiorInferirAdelanteLayout);
+        SuperiorInferirAdelanteLayout.setHorizontalGroup(
+            SuperiorInferirAdelanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SuperiorInferirAdelanteLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(497, Short.MAX_VALUE))
+        );
+        SuperiorInferirAdelanteLayout.setVerticalGroup(
+            SuperiorInferirAdelanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SuperiorInferirAdelanteLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+        );
+
+        PanelPrincipal.add(SuperiorInferirAdelante, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 830, -1));
+
+        SuperiorInferirAtras.setBackground(new java.awt.Color(72, 71, 71));
+
+        jLabel4.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(235, 235, 235));
+        jLabel4.setText("Inferencia Hacia Atras");
+
+        javax.swing.GroupLayout SuperiorInferirAtrasLayout = new javax.swing.GroupLayout(SuperiorInferirAtras);
+        SuperiorInferirAtras.setLayout(SuperiorInferirAtrasLayout);
+        SuperiorInferirAtrasLayout.setHorizontalGroup(
+            SuperiorInferirAtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SuperiorInferirAtrasLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(497, Short.MAX_VALUE))
+        );
+        SuperiorInferirAtrasLayout.setVerticalGroup(
+            SuperiorInferirAtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SuperiorInferirAtrasLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+        );
+
+        PanelPrincipal.add(SuperiorInferirAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 830, -1));
 
         CentralInferirAtras.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -605,7 +584,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(PanelInfAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(btn_InferirAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         PanelPrincipal.add(CentralInferirAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 810, 510));
@@ -668,23 +647,12 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(PanelInfAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_InferirAdelante, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         PanelPrincipal.add(CentralInferirAdelante, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 810, 500));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 1049, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -9, 1049, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -778,6 +746,7 @@ public class Inicio extends javax.swing.JFrame {
     private void btn_AgregarHipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarHipoActionPerformed
        NuevaHipotesis abrir = new NuevaHipotesis();
        abrir.setVisible(true);        // TODO add your handling code here:
+       rgl = rgl+1;
     }//GEN-LAST:event_btn_AgregarHipoActionPerformed
     private DefaultListModel ModeloH()
     {
@@ -855,7 +824,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel CentralReglasCondiciones;
     private javax.swing.JLabel CerrarMI;
     private javax.swing.JList<String> LstCondiciones;
-    private javax.swing.JList<String> LstHipotesis;
+    public static javax.swing.JList<String> LstHipotesis;
     private javax.swing.JPanel Menu;
     private javax.swing.JLabel Mov;
     private javax.swing.JPanel PanelInfAd;
@@ -881,14 +850,14 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel jlbInfAdelante;
     private javax.swing.JLabel jlbInfAtras;
     private javax.swing.JLabel jlbInfAtras1;
@@ -896,7 +865,6 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jlbReglas1;
     private javax.swing.JLabel jlbReglas2;
     private javax.swing.JPanel jpCondiciones;
-    private javax.swing.JPanel jpCondiciones1;
     private javax.swing.JPanel jpHipotesis;
     private javax.swing.JLabel minMI;
     private javax.swing.JTextArea txtInferirAdelante;

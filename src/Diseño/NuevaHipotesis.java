@@ -5,29 +5,40 @@
  */
 package Diseño;
 
+import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author MARYSOL
  */
 public class NuevaHipotesis extends javax.swing.JFrame {
-
-    /**
-     * Creates new form NuevaHipotesis
-     */
+    
+    Icon Chulito;
+    Icon Alerta;
+    DefaultListModel modelo;
+    
+    
     public NuevaHipotesis() {
         initComponents();
+        txt_no.setEditable(false);
+        txt_no.setText(String.valueOf(Inicio.rgl+1));
+        Chulito = new ImageIcon("src/Imagenes/Chulito.png");    
+        Alerta = new ImageIcon("src/Imagenes/Advertencia.png");
+        modelo = new DefaultListModel();    
     }
     
-
     String atr;
     String val;
     String des;    
+    String reg;    
+    
     
     public String Hipotesis[]=new String[3];//Aqui se guardaran las hipotesis
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +55,7 @@ public class NuevaHipotesis extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txt_des = new javax.swing.JTextField();
-        btn_agregar = new javax.swing.JButton();
+        btn_agregarhipo = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txt_no = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -58,6 +69,7 @@ public class NuevaHipotesis extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 11)); // NOI18N
         jLabel2.setText("Atributo");
@@ -89,12 +101,12 @@ public class NuevaHipotesis extends javax.swing.JFrame {
             }
         });
 
-        btn_agregar.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
-        btn_agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Add.png"))); // NOI18N
-        btn_agregar.setText("Agregar Regla");
-        btn_agregar.addActionListener(new java.awt.event.ActionListener() {
+        btn_agregarhipo.setFont(new java.awt.Font("Noto Sans", 1, 10)); // NOI18N
+        btn_agregarhipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Add.png"))); // NOI18N
+        btn_agregarhipo.setText("Agregar Regla");
+        btn_agregarhipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_agregarActionPerformed(evt);
+                btn_agregarhipoActionPerformed(evt);
             }
         });
 
@@ -102,6 +114,7 @@ public class NuevaHipotesis extends javax.swing.JFrame {
         jLabel5.setText("Regla No.");
 
         txt_no.setFont(new java.awt.Font("Noto Sans", 1, 11)); // NOI18N
+        txt_no.setEnabled(false);
         txt_no.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_noActionPerformed(evt);
@@ -189,7 +202,7 @@ public class NuevaHipotesis extends javax.swing.JFrame {
                         .addComponent(CerrarMI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_agregar)
+                        .addComponent(btn_agregarhipo)
                         .addGap(52, 52, 52))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -218,7 +231,7 @@ public class NuevaHipotesis extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txt_no, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(btn_agregar)
+                .addComponent(btn_agregarhipo)
                 .addGap(27, 27, 27))
         );
 
@@ -252,18 +265,32 @@ public class NuevaHipotesis extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_noActionPerformed
 
-    private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
+    private void btn_agregarhipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarhipoActionPerformed
+        if (txt_atr.getText().length()==0 || txt_val.getText().length()==0 || txt_des.getText().length()==0 || txt_no.getText().length()==0){
+            JOptionPane.showMessageDialog(this, "Revise que haya ingresado todos los datos requeridos", "  Información",HEIGHT, Alerta);
+        } else {
+        
         atr = this.txt_atr.getText();
         val = this.txt_val.getText();
         des = this.txt_des.getText();
+        reg = this.txt_no.getText();
         
         Hipotesis[0]=atr;
         Hipotesis[1]=val;
         Hipotesis[2]=des;
+              
+        String elem = (reg+". "+atr+" = "+val+"\n");
+        Inicio.Lista[Integer.parseInt(reg)-1] = elem;
         
-        JOptionPane.showMessageDialog(this, "Hipotesis Agregada");
+        for (int i=0; i<=(Integer.parseInt(reg)-1); i++){
+            modelo.addElement(Inicio.Lista[i]);
+        }
         
-    }//GEN-LAST:event_btn_agregarActionPerformed
+        Inicio.LstHipotesis.setModel(modelo);
+        JOptionPane.showMessageDialog(this, "Hipotesis Registrada", "  Información",HEIGHT, Chulito); 
+        this.dispose();
+        }
+    }//GEN-LAST:event_btn_agregarhipoActionPerformed
 
         int xy;
         int xx;
@@ -330,7 +357,7 @@ public class NuevaHipotesis extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CerrarMI;
     private javax.swing.JLabel Mov;
-    private javax.swing.JButton btn_agregar;
+    private javax.swing.JButton btn_agregarhipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
