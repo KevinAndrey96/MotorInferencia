@@ -735,8 +735,14 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_EliminarHipoActionPerformed
 
     private void btn_AgregarCondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarCondActionPerformed
-        NuevaCondicion abrir = new NuevaCondicion();
-       abrir.setVisible(true);   
+        if(LstHipotesis.getSelectedIndex()<0)
+        {
+            JOptionPane.showMessageDialog(Menu, "Por favor seleccione una Hipotesis para asociar");
+        }else
+        {
+            NuevaCondicion abrir = new NuevaCondicion();
+            abrir.setVisible(true);   
+        }
     }//GEN-LAST:event_btn_AgregarCondActionPerformed
 
     private void btn_EliminarCondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarCondActionPerformed
