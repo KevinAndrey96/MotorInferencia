@@ -29,6 +29,7 @@ public class Inicio extends javax.swing.JFrame {
     Icon Chulito;
     Icon Alerta;
     DefaultListModel modelo;
+    DefaultListModel modelo1;
     
     public Inicio() {
         initComponents();
@@ -41,6 +42,7 @@ public class Inicio extends javax.swing.JFrame {
         Chulito = new ImageIcon("src/Imagenes/Chulito.png");    
         Alerta = new ImageIcon("src/Imagenes/Advertencia.png");
         modelo = new DefaultListModel();
+        modelo1 = new DefaultListModel();
         JListOM.setSelectedIndex(0);
         JlistOL.setSelectedIndex(0);
         count=0;
@@ -729,22 +731,21 @@ private void InferirHaciaAdelante(ArrayList AR)
             JOptionPane.showMessageDialog(this, "Revise que haya ingresado todos los datos requeridos", "  Información",HEIGHT, Alerta);
         } else {
         
-        atr_cond = this.txt_atr.getText();
-        val_cond = this.txt_val.getText();
-        des_cond = this.txt_desc.getText();  
+        atr_cond = this.txt_atr1.getText();
+        val_cond = this.txt_val1.getText();
+        des_cond = this.txt_desc1.getText();  
         ope_cond = JListOM.getSelectedValue();
         
         String elem = (atr+" "+ope_cond+" "+val);
         Condicion[count] = elem;
         
         for (int i=0; i<=(count); i++){
-            modelo.addElement(Condicion[i]);
+            modelo1.addElement(Condicion[i]);
             count=+1;
         }
         
-        LstCondiciones.setModel(modelo);
+        LstCondiciones.setModel(modelo1);
         JOptionPane.showMessageDialog(this, "Condición Registrada", "  Información",HEIGHT, Chulito); 
-        this.dispose();
         }
     }//GEN-LAST:event_btn_agregarActionPerformed
 
