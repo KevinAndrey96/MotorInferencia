@@ -13,6 +13,16 @@ public class Condicion {
      private String Atributo="";
     private int Valor= 0;
     private String Descripcion="";
+    Hipotesis Hi=new Hipotesis();
+
+    public Hipotesis getHi() {
+        return Hi;
+    }
+
+    public void setHi(Hipotesis Hi) {
+        this.Hi = Hi;
+    }
+    
 
     public Condicion() {
         
@@ -20,7 +30,7 @@ public class Condicion {
 
     @Override
     public String toString() {
-        return  Atributo + "-" + Valor + "-" + Descripcion;
+        return  Atributo + "-" + Valor + "-" + Descripcion+"-"+Hi.getRegla();
     }
     
 

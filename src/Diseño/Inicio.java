@@ -773,53 +773,92 @@ public class Inicio extends javax.swing.JFrame {
 //        LstHipotesis.setModel(ModeloH());
   //      LstCondiciones.setModel(ModeloC());
 //    JOptionPane.showMessageDialog(Menu, LstHipotesis.getSelectedValue());
-    Hipotesis H=new Hipotesis();
+ArrayList AC= new ArrayList();    
+
+Hipotesis H=new Hipotesis();
   H.setAtributo("Sol");
   H.setValor(1);
   H.setDescripcion("Mañana hará sol");
+  H.setRegla(1);
   
-  ArrayList AC= new ArrayList();
+  Hipotesis H2=new Hipotesis();
+  H2.setAtributo("Lluvia");
+  H2.setValor(1);
+  H2.setDescripcion("Mañana lloverá");
+  H2.setRegla(2);
+  
   Condicion C=new Condicion();
   C.setAtributo("SolHoy");
   C.setValor(1);
   C.setDescripcion("Hoy hizo sol");
+  C.setHi(H);
+  
   AC.add(C);
   Condicion C2=new Condicion();
   C2.setAtributo("SolAyer");
   C2.setValor(1);
   C2.setDescripcion("Ayer hizo sol");
+  C2.setHi(H);
   AC.add(C2);
   
-  igual(H,AC);
+  Condicion C3=new Condicion();
+  C3.setAtributo("LluviaHoy");
+  C3.setValor(1);
+  C3.setDescripcion("Hoy llovio");
+  C3.setHi(H2);
+  AC.add(C3);
+  
+  Condicion C4=new Condicion();
+  C4.setAtributo("LluviaAyer");
+  C4.setValor(1);
+  C4.setDescripcion("Ayer llovió");
+  C4.setHi(H2);
+  AC.add(C4);
+  
+  InferirHaciaAdelante(AC);
     }//GEN-LAST:event_btn_ActualizarActionPerformed
-private void igual(Hipotesis Hipo, ArrayList AR)
+private void InferirHaciaAdelante(ArrayList AR)
 {
     //JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion());
     //Comienza a preguntar
+    JOptionPane.showMessageDialog(Menu, "Comienza a preguntar para inferir");
     String rta[]=new String[AR.size()];
-    int FC=0;
+    int LastRule=0;
+    int FC[]=new int[AR.size()];
     for(int i=0;i<AR.size();i++)
     {
+        
         String VC[]=AR.get(i).toString().split("-");
-        rta[i]=JOptionPane.showInputDialog(VC[2]);
+        rta[i]=JOptionPane.showInputDialog("Pregunta "+(i+1)+"\n"+VC[2]);
+                        
         if(rta[i].equals(VC[1]))
         {
-            FC++;
+            JOptionPane.showMessageDialog(Menu, "Contestaste verdadero H:"+VC[3]);
+            FC[Integer.parseInt(VC[3])]++;
+            //JOptionPane.showMessageDialog(Menu, FC[Integer.parseInt(VC[3])]);
         }else
         {
-            FC--;
+            JOptionPane.showMessageDialog(Menu, "Contestaste Falso H:"+VC[3]);
+            FC[Integer.parseInt(VC[3])]--;
+            //JOptionPane.showMessageDialog(Menu, FC[Integer.parseInt(VC[3])]);
+        }
+        LastRule=Integer.parseInt(VC[3]);
+    }
+    //int Respuesta=FC/AR.size();
+    for(int i=1;i<LastRule+1;i++)
+    {
+        int Respuesta=FC[i]/LastRule;
+        if(Respuesta==0)
+    {
+        JOptionPane.showMessageDialog(Menu, "Para la Hipotesis con regla "+(i)+" La respuesta es: Equiprobable, Factor de certeza=50% FC="+FC[i]);
+        }else{
+        if(Respuesta>0)
+        JOptionPane.showMessageDialog(Menu, "Para la Hipotesis con regla "+(i)+" La respuesta es: Verdadero, Factor de certeza="+Respuesta*100+"% FC="+FC[i]);
+        else
+        JOptionPane.showMessageDialog(Menu, "Para la Hipotesis con regla "+(i)+" La respuesta es: Falso, Factor de certeza="+Respuesta*-100+"% FC="+FC[i]);
         }
     }
-    int Respuesta=FC/AR.size();
-    if(Respuesta==0)
-    {
-        JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion()+" Equiprobable, Factor de certeza=50%");
-    }else{
-    if(Respuesta>0)
-    JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion()+" Verdadero, Factor de certeza="+Respuesta*100+"%");
-    else
-    JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion()+" Falso, Factor de certeza="+Respuesta*-100+"%");
-    }
+    
     /*if(rta[0].equals(rta[1]) && rta[0].equals("1"))
     {
         JOptionPane.showMessageDialog(Menu, Hipo.getDescripcion()+" Verdadero");

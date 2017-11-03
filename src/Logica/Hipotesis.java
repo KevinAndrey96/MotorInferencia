@@ -13,6 +13,16 @@ public class Hipotesis {
     private String Atributo="";
     private int Valor= 0;
     private String Descripcion="";
+    private int Regla=0;
+
+    public int getRegla() {
+        return Regla;
+    }
+
+    public void setRegla(int Regla) {
+        this.Regla = Regla;
+    }
+    
 
   /*  public Hipotesis(String Atributo, int Valor, String Descripcion) {
         this.Atributo=Atributo;
